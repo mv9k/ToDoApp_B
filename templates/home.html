@@ -1,0 +1,39 @@
+<div ng-controller="listController as lc">
+
+    <nav>
+        <ul class="pagination pagination-lg">
+            <li><a class="listlabel" href="#" ng-click="lc.currentList='all'">{{ 'ShowAllLists' | translate }}</a></li>
+            <li><a class="listlabel" href="#" ng-repeat="listtab in lc.lists track by $index" ng-click="lc.selectList($index)">{{listtab | capitalize}}&nbsp;&nbsp;&nbsp;<span class="badge">{{ (lc.tasks | filter: {listname:lc.lists[$index], finished: true}:true).length }} / {{ (lc.tasks | filter: {listname:lc.lists[$index]}:true).length }}</span></a></li>
+            <li><a class="listlabel" href="#" ng-click="lc.clearFinished()">
+                <span>{{ 'ClearFinishedTasks' | translate }}</span>&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-right"></span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <div class="listblock">
+        <form role="form" ng-submit="lc.addTask(task)" id="taskform">
+
+            <input type="text" ng-model="task.listname" placeholder="{{ 'ListName' | translate }}" size="30" required/>
+            <input type="text" ng-model="task.name" placeholder="{{ 'TaskName' | translate }}" size="30" required/>
+            <button type="submit" form="taskform" value="Submit"><i class="glyphicon glyphicon-plus" id="addtaskbtn">&nbsp;{{ 'Task' | translate }}</i></button>
+        </form>
+    </div>
+
+<div class="container">
+<div class="col-xs-12 listblock list" ng-repeat="list in lc.lists | filter:lc.lists[lc.currentList]:true">
+    <h2>{{list | capitalize}}</h2>
+    <!-- List Delete X -->
+    <div class="col-xs-2 delbtn closingX" ng-click="lc.delList(list)"><span class="glyphicon glyphicon-remove"></span></div>
+    <hr>
+    <div class="col-xs-12">
+        <div ng-repeat="task in lc.tasks | filter:{ listname: list }:true" display-content class="task">
+            <!-- Custom dynamic directive loads content here from content.html with the display-content attribute -->
+        </div>
+    </div>
+
+    <!-- No items to show static directive -->
+    <no-items ng-hide="(lc.tasks | filter:{ listname: list }:true).length"></no-items>
+
+    </div>
+</div>
+</div>

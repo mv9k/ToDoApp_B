@@ -1,0 +1,243 @@
+h3 { margin-top: 0; }
+h4 { margin-top: 6px !important; }
+.top-margin { margin-top: 60px; }
+input[type=text], button { border: black 1px solid; }
+
+.listblock {
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 90px;
+    background-color: rgba(0,0,0,0.2);
+    color: whitesmoke;
+    border: 1px solid dimgray;
+    margin: 4px;
+    text-align: center;
+    -webkit-box-shadow: inset 0px 0px 20px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 20px -8px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 20px -8px rgba(0,0,0,0.75);
+    transition: 0.5s ease all;
+}
+
+body {
+    background: rgb(69,81,117);
+    background: -moz-radial-gradient(center, ellipse cover,  rgb(69,81,117) 30%, rgb(29,43,58) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover,  rgb(69,81,117) 30%,rgb(29,43,58) 100%);
+    background: radial-gradient(ellipse at center,  rgb(69,81,117) 30%,rgb(29,43,58) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#455175', endColorstr='#1d2b3a',GradientType=1 );
+}
+
+html {
+    height: 100%;
+}
+input {
+    font-size: 19px;
+    background-color: rgba(0,0,0,0.2);
+}
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+#addtaskbtn {
+    width: 130px;
+    padding: 15px;
+    font-size: 1em;
+    background-color: rgba(40, 199, 255, 0.89) !important;
+    transition: all 0.4s ease;
+}
+#addtaskbtn:hover {
+    background-color: rgba(52, 185, 255, 0.89);
+}
+.success:after {
+    font-size: 12px;
+    content: "SUCCESS!";
+}
+.listblock.finished {
+    opacity: 5 !important;
+    background-color: rgba(156, 128, 255, 0.71);
+    color: rgba(25, 25, 25, 0.94);
+    position: relative;
+    bottom: 0;
+    -webkit-box-shadow: 0px 0px 20px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -8px rgba(0,0,0,0.75);
+}
+.listblock.finished-add {
+    position: relative;
+    bottom: 3px;
+    background-color: rgba(118, 0, 255, 0.45);
+    -webkit-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+}
+.listblock.finished-remove {
+    position: relative;
+    top: 3px;
+    background-color: rgba(118, 0, 255, 0.45);
+    color: rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 29px -5px rgba(0,0,0,0.75);
+}
+
+.finishbtn {
+    padding: 10px;
+    border: 1px solid black !important;
+    color: rgba(0, 0, 0, 0.7) !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.finishbtn:hover {
+    color: rgb(124, 252, 0) !important;
+    background-color: rgba(70, 89, 188, 0.37);
+}
+.green {
+    color: rgb(124, 252, 0);
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.delbtn {
+    padding: 10px;
+    border: 1px solid black;
+    color: rgba(245, 35, 94, 0.61);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.delbtn:hover {
+    color: rgb(245, 35, 94);
+    background-color: #4659bc;
+}
+.listbar {
+    color: seashell;
+}
+.listbar li {
+    background-color: black;
+}
+.closingX {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.task {
+    transition: 0.7s ease all;
+}
+.task.ng-enter {
+    opacity: 0;
+    top: 0;
+}
+.task.ng-enter.ng-enter-active {
+    opacity: 100;
+    position: relative;
+    top: 7px;
+}
+.task.ng-leave {
+    width: 100%;
+    top: 0;
+}
+.task.ng-leave.ng-leave-active {
+    opacity: 0;
+    position: relative;
+    top: 7px;
+
+}
+.about[ui-view]{
+    height: 65px;
+}
+
+.ui-view-container {
+    position: relative;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+
+[ui-view].ng-enter {
+    opacity: 0;
+    -webkit-transform:scale3d(0.5, 0.5, 0.5);
+    -moz-transform:scale3d(0.5, 0.5, 0.5);
+    transform:scale3d(0.5, 0.5, 0.5);
+}
+
+[ui-view].ng-enter-active {
+    opacity: 1;
+    -webkit-transform:scale3d(1, 1, 1);
+    -moz-transform:scale3d(1, 1, 1);
+    transform:scale3d(1, 1, 1);
+}
+
+[ui-view].ng-leave {
+    opacity: 1;
+    /*padding-left: 0px;*/
+    -webkit-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+}
+
+[ui-view].ng-leave-active {
+    opacity: 0;
+    /*padding-left: 100px;*/
+    -webkit-transform:translate3d(100px, 0, 0);
+    -moz-transform:translate3d(100px, 0, 0);
+    transform:translate3d(100px, 0, 0);
+}
+.list {
+    transition: 0.7s ease all;
+}
+.list.ng-enter {
+    opacity: 0;
+}
+.list.ng-enter.ng-enter-active {
+    opacity: 100;
+}
+.list.ng-leave {
+    opacity: 100%;
+}
+.list.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+.listlabel {
+    transition: 0.5s ease all;
+    -webkit-box-shadow: inset 0px 0px 29px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 29px -9px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 29px -9px rgba(0,0,0,0.75);
+}
+.listlabel:hover {
+    background-color: rgba(69, 103, 255, 0.75) !important;
+    color: whitesmoke !important;
+    -webkit-box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+}
+.listlabel.ng-enter-active {
+    background-color: rgba(69, 103, 255, 0.75) !important;
+    color: whitesmoke !important;
+    -webkit-box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 34px -9px rgba(0,0,0,0.75);
+}
+.listlabel.ng-leave-active {
+    background-color: rgba(69, 103, 255, 0.75) !important;
+    color: whitesmoke !important;
+    -webkit-box-shadow: 0px 0px 90px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 90px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 90px -9px rgba(0,0,0,0.75);
+    opacity: 0;
+}
+.navbar-brand {
+    font-size: 30px;
+    font-family: "Dancing Script", cursive;
+}
+.lang-button {
+    cursor: pointer;
+}
+.lang-button:hover {
+    color: deepskyblue;
+}
